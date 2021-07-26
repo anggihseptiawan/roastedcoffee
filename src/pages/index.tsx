@@ -1,5 +1,15 @@
 import Head from "next/head";
-import { Heading } from "@chakra-ui/react";
+import {
+	Container,
+	Flex,
+	Heading,
+	Link,
+	HStack,
+	Image,
+	Box,
+	Text,
+	Button,
+} from "@chakra-ui/react";
 
 export default function Home() {
 	return (
@@ -10,14 +20,61 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main>
-				<Heading>Roastedcoffee</Heading>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae
-					beatae sint fugit possimus architecto culpa non deserunt
-					accusamus cumque voluptatem?
-				</p>
-			</main>
+			<header>
+				<Container maxW="container.lg">
+					<Flex justifyContent="space-between" py="7">
+						<Heading size="md">Roastedcoffee</Heading>
+						<HStack spacing="15px">
+							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+								HOME
+							</Link>
+							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+								ABOUT US
+							</Link>
+							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+								CREATE YOUR PLAN
+							</Link>
+						</HStack>
+					</Flex>
+					<Box
+						background="url('/assets/images/thumbnail.jpg')"
+						objectFit="cover"
+						py="20"
+						px="10"
+						borderRadius="md"
+						overflow="hidden"
+						position="relative"
+						_after={{
+							content: '""',
+							position: "absolute",
+							inset: 0,
+							background:
+								"linear-gradient(to right, #000000d4, #00000040)",
+						}}
+					>
+						<Box maxW="50%" position="relative" zIndex="2">
+							<Heading as="h3" mb="4" color="white">
+								Great coffee made simple.
+							</Heading>
+							<Text color="whiteAlpha.800" fontWeight="medium">
+								Start your mornings with the worlds best coffees. Try
+								our expertly curated artisan coffees from ours best
+								roasters delivered directly to your door, at your
+								schedule.
+							</Text>
+							<Button
+								background="teal.500"
+								color="white"
+								_hover={{ bg: "teal.600" }}
+								_active={{ bg: "teal.600" }}
+								mt="8"
+							>
+								Create your plan
+							</Button>
+						</Box>
+					</Box>
+				</Container>
+			</header>
 		</>
 	);
 }

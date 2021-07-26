@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Head from "next/head";
 import {
 	Container,
@@ -9,9 +10,23 @@ import {
 	Box,
 	Text,
 	Button,
+	SimpleGrid,
+	Drawer,
+	DrawerBody,
+	DrawerFooter,
+	DrawerHeader,
+	DrawerOverlay,
+	DrawerContent,
+	DrawerCloseButton,
+	useDisclosure,
+	Input,
+	Stack,
 } from "@chakra-ui/react";
 
 export default function Home() {
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const btnRef = useRef(null);
+
 	return (
 		<>
 			<Head>
@@ -24,7 +39,7 @@ export default function Home() {
 				<Container maxW="container.lg">
 					<Flex justifyContent="space-between" py="7">
 						<Heading size="md">Roastedcoffee</Heading>
-						<HStack spacing="15px">
+						<HStack spacing="15px" d={["none", "flex"]}>
 							<Link fontSize="12px" fontWeight="medium" color="gray.500">
 								HOME
 							</Link>
@@ -35,12 +50,21 @@ export default function Home() {
 								CREATE YOUR PLAN
 							</Link>
 						</HStack>
+						<Button
+							ref={btnRef}
+							colorScheme="teal"
+							onClick={onOpen}
+							d={["block", "none"]}
+							size="sm"
+						>
+							menu
+						</Button>
 					</Flex>
 					<Box
 						background="url('/assets/images/thumbnail.jpg')"
 						objectFit="cover"
-						py="20"
-						px="10"
+						py={[10, 20]}
+						px={[5, 10]}
 						borderRadius="md"
 						overflow="hidden"
 						position="relative"
@@ -52,7 +76,11 @@ export default function Home() {
 								"linear-gradient(to right, #000000d4, #00000040)",
 						}}
 					>
-						<Box maxW="50%" position="relative" zIndex="2">
+						<Box
+							maxW={{ sm: "100%", md: "50%" }}
+							position="relative"
+							zIndex="2"
+						>
 							<Heading as="h3" mb="4" color="white">
 								Great coffee made simple.
 							</Heading>
@@ -75,6 +103,86 @@ export default function Home() {
 					</Box>
 				</Container>
 			</header>
+
+			<main>
+				<Container maxW="container.lg" py="20">
+					<SimpleGrid columns={[2, 3, 4]} spacing={[5, 10]}>
+						<Box>
+							<Image src="/assets/images/sample 1.jpg" alt="coffee 1" />
+							<Text fontWeight="bold" mt="4" mb="3" fontSize="18">
+								Gran expresso
+							</Text>
+							<Text>
+								Light and flavorful blend with cocoa and black paper for
+								an intense experinece
+							</Text>
+						</Box>
+						<Box>
+							<Image src="/assets/images/sample 2.jpg" alt="coffee 2" />
+							<Text fontWeight="bold" mt="4" mb="3" fontSize="18">
+								Planalto
+							</Text>
+							<Text>
+								Brazilian dark roast with rich and velvety body, and
+								hints of fruit and nuts
+							</Text>
+						</Box>
+						<Box>
+							<Image
+								src="/assets/images/sample 3.jpg"
+								maxH="163.5px"
+								w="100%"
+								objectFit="cover"
+								alt="coffee 3"
+							/>
+							<Text fontWeight="bold" mt="4" mb="3" fontSize="18">
+								Piccolo
+							</Text>
+							<Text>
+								Mild and smooth blend featuring notes of toasted almond
+								and dried cherry
+							</Text>
+						</Box>
+						<Box>
+							<Image src="/assets/images/sample 4.jpg" alt="coffee 4" />
+							<Text fontWeight="bold" mt="4" mb="3" fontSize="18">
+								Danche
+							</Text>
+							<Text>
+								Ethipiant hand-harvested blend densely packed with
+								vibrant fruit notes
+							</Text>
+						</Box>
+					</SimpleGrid>
+				</Container>
+			</main>
+
+			<Drawer
+				isOpen={isOpen}
+				placement="right"
+				onClose={onClose}
+				finalFocusRef={btnRef}
+			>
+				<DrawerOverlay />
+				<DrawerContent>
+					<DrawerCloseButton />
+					<DrawerHeader>Choose your menu</DrawerHeader>
+
+					<DrawerBody>
+						<Stack spacing="5">
+							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+								HOME
+							</Link>
+							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+								ABOUT US
+							</Link>
+							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+								CREATE YOUR PLAN
+							</Link>
+						</Stack>
+					</DrawerBody>
+				</DrawerContent>
+			</Drawer>
 		</>
 	);
 }

@@ -1,10 +1,9 @@
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
-  fonts: {
-    heading: "RammettoOne",
-    body: "RammettoOne"
-  },
-})
+	fonts: {
+		heading: "Rammetto One",
+	},
+});
 
-export default theme
+export default theme;

@@ -104,14 +104,14 @@ export default function Home() {
 			</header>
 
 			<main>
-				<Container maxW="container.lg" py="20">
+				<Container maxW="container.lg" py={["10", "20"]}>
 					{/* Collection Section */}
 					<Heading
-						fontSize="7xl"
+						fontSize={["4xl", "7xl"]}
 						align="center"
 						position="relative"
 						opacity=".05"
-						bottom="-20px"
+						bottom={["-14px", "-20px"]}
 						zIndex="-1"
 					>
 						our collection
@@ -204,9 +204,9 @@ export default function Home() {
 
 					{/* Section Collection */}
 					<Box
-						mt="40"
-						pt="20"
-						pb="36"
+						mt={["20", "40"]}
+						pt={["10", "20"]}
+						pb={["28", "36"]}
 						d="flex"
 						justifyContent="center"
 						background="blackAlpha.800"
@@ -300,14 +300,14 @@ export default function Home() {
 					</SimpleGrid>
 
 					{/* Section how it works */}
-					<Box mt="40" mb="20">
+					<Box mt={["20", "40"]} mb="20">
 						<Heading as="h5" fontSize="md" opacity="0.6">
 							How it works
 						</Heading>
 						<Box w="full">
 							<Flex>
 								<Box
-									my="14"
+									my={["8", "14"]}
 									position="relative"
 									w="full"
 									_after={{
@@ -331,7 +331,7 @@ export default function Home() {
 									></Box>
 								</Box>
 								<Box
-									my="14"
+									my={["8", "14"]}
 									position="relative"
 									w="full"
 									_after={{
@@ -356,7 +356,7 @@ export default function Home() {
 									></Box>
 								</Box>
 								<Box
-									my="14"
+									my={["8", "14"]}
 									position="relative"
 									w="full"
 									_after={{
@@ -386,10 +386,14 @@ export default function Home() {
 						<Box>
 							<SimpleGrid columns={[1, 2, 3]} spacing="10">
 								<Box>
-									<Heading fontSize="4xl" mb="10" color="red.200">
+									<Heading
+										fontSize="4xl"
+										mb={["2", "10"]}
+										color="red.200"
+									>
 										01
 									</Heading>
-									<Heading mb="5" fontSize="lg" opacity="0.8">
+									<Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
 										Pick your coffee
 									</Heading>
 									<Text>
@@ -400,10 +404,14 @@ export default function Home() {
 									</Text>
 								</Box>
 								<Box>
-									<Heading fontSize="4xl" mb="10" color="red.200">
+									<Heading
+										fontSize="4xl"
+										mb={["2", "10"]}
+										color="red.200"
+									>
 										02
 									</Heading>
-									<Heading mb="5" fontSize="lg" opacity="0.8">
+									<Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
 										Choose the frequency
 									</Heading>
 									<Text>
@@ -414,10 +422,14 @@ export default function Home() {
 									</Text>
 								</Box>
 								<Box>
-									<Heading fontSize="4xl" mb="10" color="red.200">
+									<Heading
+										fontSize="4xl"
+										mb={["2", "10"]}
+										color="red.200"
+									>
 										03
 									</Heading>
-									<Heading mb="5" fontSize="lg" opacity="0.8">
+									<Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
 										Receive and enjoy!
 									</Heading>
 									<Text>
@@ -433,7 +445,7 @@ export default function Home() {
 								color="white"
 								_hover={{ bg: "teal.600" }}
 								_active={{ bg: "teal.600" }}
-								mt="12"
+								mt={["8", "12"]}
 								px="6"
 							>
 								Create your plan
@@ -446,22 +458,37 @@ export default function Home() {
 			<footer>
 				<Container maxW="container.lg" mb="8">
 					<Box background="blackAlpha.800" py="6" px="8" borderRadius="md">
-						<SimpleGrid columns={[1, 3]} spacing="10">
+						<SimpleGrid columns={[1, 3]} spacing="4">
 							<Heading fontSize="md" color="whiteAlpha.900">
 								roastedcoffee
 							</Heading>
-							<Box d="flex" justifyContent="center">
-								<Link color="whiteAlpha.700" mr="4" fontSize="xs">
+							<Box d="flex" justifyContent={["flex-start", "center"]}>
+								<Link
+									color="whiteAlpha.800"
+									fontWeight="medium"
+									mr="4"
+									fontSize="xs"
+								>
 									HOME
 								</Link>
-								<Link color="whiteAlpha.700" mr="4" fontSize="xs">
+								<Link
+									color="whiteAlpha.800"
+									fontWeight="medium"
+									mr="4"
+									fontSize="xs"
+								>
 									ABOUT US
 								</Link>
-								<Link color="whiteAlpha.700" mr="4" fontSize="xs">
+								<Link
+									color="whiteAlpha.800"
+									fontWeight="medium"
+									mr="4"
+									fontSize="xs"
+								>
 									CREATE YOUR PLAN
 								</Link>
 							</Box>
-							<Box d="flex" justifyContent="flex-end">
+							<Box d="flex" justifyContent={["flex-start", "flex-end"]}>
 								<Image
 									src="/assets/images/facebook.png"
 									alt="facebook"

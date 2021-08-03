@@ -2,29 +2,19 @@ import {
 	Box,
 	Button,
 	Container,
-	Drawer,
-	DrawerBody,
-	DrawerCloseButton,
-	DrawerContent,
-	DrawerHeader,
-	DrawerOverlay,
 	Flex,
 	Heading,
-	HStack,
 	Image,
 	Link,
 	SimpleGrid,
-	Stack,
 	Text,
-	useDisclosure,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import { useRef } from "react";
+import NextLink from "next/link";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
 
 export default function Home() {
-	const { isOpen, onOpen, onClose } = useDisclosure();
-	const btnRef = useRef(null);
-
 	return (
 		<>
 			<Head>
@@ -35,29 +25,7 @@ export default function Home() {
 
 			<header>
 				<Container maxW="container.lg">
-					<Flex justifyContent="space-between" py="7">
-						<Heading size="sm">roastedcoffee</Heading>
-						<HStack spacing="15px" d={["none", "flex"]}>
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
-								HOME
-							</Link>
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
-								ABOUT US
-							</Link>
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
-								CREATE YOUR PLAN
-							</Link>
-						</HStack>
-						<Button
-							ref={btnRef}
-							colorScheme="teal"
-							onClick={onOpen}
-							d={["block", "none"]}
-							size="sm"
-						>
-							menu
-						</Button>
-					</Flex>
+					<Navbar />
 					<Box
 						background="url('/assets/images/thumbnail.jpg')"
 						backgroundSize="cover"
@@ -96,7 +64,9 @@ export default function Home() {
 								mt="8"
 								px="6"
 							>
-								Create your plan
+								<NextLink href="/plan">
+									<Link>Create your plan</Link>
+								</NextLink>
 							</Button>
 						</Box>
 					</Box>
@@ -204,6 +174,7 @@ export default function Home() {
 
 					{/* Section Collection */}
 					<Box
+						id="why"
 						mt={["20", "40"]}
 						pt={["10", "20"]}
 						pb={["28", "36"]}
@@ -245,7 +216,7 @@ export default function Home() {
 								Best Quality
 							</Heading>
 							<Text color="whiteAlpha.800" align="center">
-								Dsicover an endless variety of the world&apos;s best
+								Discover an endless variety of the world&apos;s best
 								artisan coffee from each of our roasters
 							</Text>
 						</Box>
@@ -269,8 +240,8 @@ export default function Home() {
 								Exclusive benefits
 							</Heading>
 							<Text color="whiteAlpha.800" align="center">
-								Dsicover an endless variety of the world&apos;s best
-								artisan coffee from each of our roasters
+								Special offers and swag when you subscribe, including
+								30% of your first shipment.
 							</Text>
 						</Box>
 						<Box background="teal.500" borderRadius="5" px="5" py="8">
@@ -293,14 +264,19 @@ export default function Home() {
 								Free shipping
 							</Heading>
 							<Text color="whiteAlpha.800" align="center">
-								Dsicover an endless variety of the world&apos;s best
-								artisan coffee from each of our roasters
+								We cover the cost and coffee is delivered fast. Peak
+								freshness guaranted.
 							</Text>
 						</Box>
 					</SimpleGrid>
 
 					{/* Section how it works */}
-					<Box mt={["20", "40"]} mb="20">
+					<Box
+						id="plan"
+						mt={["20", "40"]}
+						mb="20"
+						style={{ scrollPaddingTop: "10px" }}
+					>
 						<Heading as="h5" fontSize="md" opacity="0.6">
 							How it works
 						</Heading>
@@ -397,10 +373,10 @@ export default function Home() {
 										Pick your coffee
 									</Heading>
 									<Text>
-										Lorem ipsum, dolor sit amet consectetur
-										adipisicing elit. Id nemo culpa assumenda maxime
-										excepturi neque aliquam voluptatem veritatis non
-										veniam.
+										Select from our evolving range fo artisan coffees.
+										Our beans are ethically sourced and we pay fair
+										price of them. There are new coffees in all
+										profiles every month for you to try out.
 									</Text>
 								</Box>
 								<Box>
@@ -415,10 +391,10 @@ export default function Home() {
 										Choose the frequency
 									</Heading>
 									<Text>
-										Lorem ipsum, dolor sit amet consectetur
-										adipisicing elit. Voluptas at asperiores
-										doloremque eius earum ratione iste ipsum odit
-										minus tempora!
+										Customize your order frequency, quantity, even
+										your roast style and grind type. Pause, skip or
+										cancel your subscription with no commitment
+										through our pipeline portal.
 									</Text>
 								</Box>
 								<Box>
@@ -433,13 +409,14 @@ export default function Home() {
 										Receive and enjoy!
 									</Heading>
 									<Text>
-										Lorem ipsum dolor, sit amet consectetur
-										adipisicing elit. Delectus blanditiis ullam
-										voluptates optio tenetur architecto corporis
-										mollitia, ut commodi accusamus?
+										We ship your package within 48 ours, freshly
+										roasted. Sit back and enjoy award winning world
+										class coffees curated to provide a distinct
+										tasting experience
 									</Text>
 								</Box>
 							</SimpleGrid>
+							<Link></Link>
 							<Button
 								background="teal.500"
 								color="white"
@@ -448,99 +425,14 @@ export default function Home() {
 								mt={["8", "12"]}
 								px="6"
 							>
-								Create your plan
+								<Link href="/plan">Create your plan</Link>
 							</Button>
 						</Box>
 					</Box>
 				</Container>
 			</main>
 
-			<footer>
-				<Container maxW="container.lg" mb="8">
-					<Box background="blackAlpha.800" py="6" px="8" borderRadius="md">
-						<SimpleGrid columns={[1, 3]} spacing="4">
-							<Heading fontSize="md" color="whiteAlpha.900">
-								roastedcoffee
-							</Heading>
-							<Box d="flex" justifyContent={["flex-start", "center"]}>
-								<Link
-									color="whiteAlpha.800"
-									fontWeight="medium"
-									mr="4"
-									fontSize="xs"
-								>
-									HOME
-								</Link>
-								<Link
-									color="whiteAlpha.800"
-									fontWeight="medium"
-									mr="4"
-									fontSize="xs"
-								>
-									ABOUT US
-								</Link>
-								<Link
-									color="whiteAlpha.800"
-									fontWeight="medium"
-									mr="4"
-									fontSize="xs"
-								>
-									CREATE YOUR PLAN
-								</Link>
-							</Box>
-							<Box d="flex" justifyContent={["flex-start", "flex-end"]}>
-								<Image
-									src="/assets/images/facebook.png"
-									alt="facebook"
-									w="20px"
-									filter="invert(1)"
-									mr="2"
-								/>
-								<Image
-									src="/assets/images/twitter.png"
-									alt="twitter"
-									w="20px"
-									filter="invert(1)"
-									mr="2"
-								/>
-								<Image
-									src="/assets/images/instagram.png"
-									alt="instagram"
-									w="20px"
-									filter="invert(1)"
-								/>
-							</Box>
-						</SimpleGrid>
-					</Box>
-				</Container>
-			</footer>
-
-			<Drawer
-				isOpen={isOpen}
-				placement="right"
-				onClose={onClose}
-				finalFocusRef={btnRef}
-			>
-				<DrawerOverlay />
-				<DrawerContent>
-					<DrawerCloseButton />
-					<DrawerHeader>Choose your menu</DrawerHeader>
-
-					<DrawerBody>
-						<Stack spacing="5">
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
-								HOME
-							</Link>
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
-								ABOUT US
-							</Link>
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
-								CREATE YOUR PLAN
-							</Link>
-						</Stack>
-					</DrawerBody>
-				</DrawerContent>
-			</Drawer>
+			<Footer />
 		</>
 	);
 }

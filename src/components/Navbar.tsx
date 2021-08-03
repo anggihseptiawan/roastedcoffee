@@ -14,6 +14,7 @@ import {
 	DrawerHeader,
 	DrawerOverlay,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 export function Navbar() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -21,7 +22,11 @@ export function Navbar() {
 	return (
 		<>
 			<Flex justifyContent="space-between" py="7">
-				<Heading size="sm">roastedcoffee</Heading>
+				<Link>
+					<NextLink href="/">
+						<Heading size="sm">roastedcoffee</Heading>
+					</NextLink>
+				</Link>
 				<HStack spacing="15px" d={["none", "flex"]}>
 					<Link fontSize="12px" fontWeight="bold" color="gray.500">
 						HOME

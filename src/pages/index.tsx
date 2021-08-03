@@ -2,16 +2,15 @@ import {
 	Box,
 	Button,
 	Container,
-	Flex,
 	Heading,
 	Image,
-	Link,
 	SimpleGrid,
 	Text,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import NextLink from "next/link";
+import Link from "next/link";
 import { Footer } from "../components/Footer";
+import { Line } from "../components/Line";
 import { Navbar } from "../components/Navbar";
 
 export default function Home() {
@@ -56,18 +55,19 @@ export default function Home() {
 								roasters delivered directly to your door, at your
 								schedule.
 							</Text>
-							<Button
-								background="teal.500"
-								color="white"
-								_hover={{ bg: "teal.600" }}
-								_active={{ bg: "teal.600" }}
-								mt="8"
-								px="6"
-							>
-								<NextLink href="/plan">
-									<Link>Create your plan</Link>
-								</NextLink>
-							</Button>
+							<Link href="/plan" passHref>
+								<Button
+									as="a"
+									background="teal.500"
+									color="white"
+									_hover={{ bg: "teal.600" }}
+									_active={{ bg: "teal.600" }}
+									mt="8"
+									px="6"
+								>
+									Create your plan
+								</Button>
+							</Link>
 						</Box>
 					</Box>
 				</Container>
@@ -280,84 +280,8 @@ export default function Home() {
 						<Heading as="h5" fontSize="md" opacity="0.6">
 							How it works
 						</Heading>
-						<Box w="full">
-							<Flex>
-								<Box
-									my={["8", "14"]}
-									position="relative"
-									w="full"
-									_after={{
-										content: "''",
-										position: "absolute",
-										display: "block",
-										width: "100%",
-										top: "8px",
-										background: "red.200",
-										height: "3px",
-										zIndex: -1,
-									}}
-								>
-									<Box
-										height="20px"
-										width="20px"
-										borderRadius="full"
-										border="solid"
-										borderColor="teal.500"
-										background="white"
-									></Box>
-								</Box>
-								<Box
-									my={["8", "14"]}
-									position="relative"
-									w="full"
-									_after={{
-										content: "''",
-										position: "absolute",
-										display: "block",
-										width: "100%",
-										top: "8px",
-										background: "red.200",
-										height: "3px",
-										zIndex: -1,
-									}}
-								>
-									<Box
-										height="20px"
-										width="20px"
-										borderRadius="full"
-										border="solid"
-										borderColor="teal.500"
-										background="white"
-										ml="3"
-									></Box>
-								</Box>
-								<Box
-									my={["8", "14"]}
-									position="relative"
-									w="full"
-									_after={{
-										content: "''",
-										position: "absolute",
-										display: "block",
-										width: "100%",
-										top: "8px",
-										background: "red.200",
-										height: "3px",
-										zIndex: -1,
-									}}
-								>
-									<Box
-										height="20px"
-										width="20px"
-										borderRadius="full"
-										border="solid"
-										borderColor="teal.500"
-										background="white"
-										ml="5"
-									></Box>
-								</Box>
-							</Flex>
-						</Box>
+
+						<Line type="full" />
 
 						<Box>
 							<SimpleGrid columns={[1, 2, 3]} spacing="10">
@@ -416,17 +340,19 @@ export default function Home() {
 									</Text>
 								</Box>
 							</SimpleGrid>
-							<Link></Link>
-							<Button
-								background="teal.500"
-								color="white"
-								_hover={{ bg: "teal.600" }}
-								_active={{ bg: "teal.600" }}
-								mt={["8", "12"]}
-								px="6"
-							>
-								<Link href="/plan">Create your plan</Link>
-							</Button>
+							<Link href="/plan" passHref>
+								<Button
+									as="a"
+									background="teal.500"
+									color="white"
+									_hover={{ bg: "teal.600" }}
+									_active={{ bg: "teal.600" }}
+									mt={["8", "12"]}
+									px="6"
+								>
+									Create your plan
+								</Button>
+							</Link>
 						</Box>
 					</Box>
 				</Container>

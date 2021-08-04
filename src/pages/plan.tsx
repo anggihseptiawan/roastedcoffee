@@ -6,6 +6,13 @@ import {
 	SimpleGrid,
 	Grid,
 	GridItem,
+	Accordion,
+	AccordionButton,
+	AccordionIcon,
+	AccordionPanel,
+	AccordionItem,
+	Button,
+	Flex,
 } from "@chakra-ui/react";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
@@ -128,26 +135,401 @@ export default function Plan() {
 
 				<Grid templateColumns="repeat(6, 1fr)" gap="10" my="20">
 					<GridItem colSpan={2}>
-						<Text pb="2" mb="4" borderBottom="2px solid gray">
+						<Heading
+							pb="3"
+							mb="5"
+							fontSize="sm"
+							opacity=".5"
+							borderBottom="2px solid gray"
+						>
 							01 &nbsp;&nbsp; Preferences
-						</Text>
-						<Text pb="2" mb="4" borderBottom="2px solid gray">
+						</Heading>
+						<Heading
+							pb="3"
+							mb="5"
+							fontSize="sm"
+							opacity=".5"
+							borderBottom="2px solid gray"
+						>
 							02 &nbsp;&nbsp; Bean Type
-						</Text>
-						<Text pb="2" mb="4" borderBottom="2px solid gray">
+						</Heading>
+						<Heading
+							pb="3"
+							mb="5"
+							fontSize="sm"
+							opacity=".5"
+							borderBottom="2px solid gray"
+						>
 							03 &nbsp;&nbsp; Quantity
-						</Text>
-						<Text pb="2" mb="4" borderBottom="2px solid gray">
+						</Heading>
+						<Heading
+							pb="3"
+							mb="5"
+							fontSize="sm"
+							opacity=".5"
+							borderBottom="2px solid gray"
+						>
 							04 &nbsp;&nbsp; Grind Option
-						</Text>
-						<Text pb="2" mb="4" borderBottom="2px solid gray">
+						</Heading>
+						<Heading
+							pb="3"
+							mb="5"
+							fontSize="sm"
+							opacity=".9"
+							borderBottom="2px solid gray"
+						>
 							05 &nbsp;&nbsp; Deliveries
-						</Text>
+						</Heading>
 					</GridItem>
 					<GridItem colSpan={4}>
-						<Heading fontSize="2xl">
-							How do you drink your coffee ?
-						</Heading>
+						<Accordion defaultIndex={[0]} allowMultiple>
+							<AccordionItem border="0" mb="6">
+								<h2>
+									<AccordionButton>
+										<Box flex="1" textAlign="left">
+											<Heading fontSize="xl" opacity=".6">
+												How do you drink your coffee ?
+											</Heading>
+										</Box>
+										<AccordionIcon />
+									</AccordionButton>
+								</h2>
+								<AccordionPanel py={4}>
+									<SimpleGrid columns={[2, 3]} gap="5">
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Capsule
+											</Text>
+											<Text>
+												Compatible with Nespresso system and similar
+												brewers
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="teal.400"
+											borderRadius="md"
+											color="white"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Filter
+											</Text>
+											<Text>
+												For pour over or drip methods like
+												Aeropress, Chemex, and V60
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Espresso
+											</Text>
+											<Text>
+												Dense and finely ground beans for intense,
+												flavorful experience
+											</Text>
+										</Box>
+									</SimpleGrid>
+								</AccordionPanel>
+							</AccordionItem>
+
+							<AccordionItem border="0" mb="6">
+								<h2>
+									<AccordionButton>
+										<Box flex="1" textAlign="left">
+											<Heading fontSize="xl" opacity=".6">
+												What type of coffee ?
+											</Heading>
+										</Box>
+										<AccordionIcon />
+									</AccordionButton>
+								</h2>
+								<AccordionPanel py={4}>
+									<SimpleGrid columns={[2, 3]} gap="5">
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Single Origin
+											</Text>
+											<Text>
+												Distinct, high quality coffee from a
+												specific family owned farm
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="teal.400"
+											borderRadius="md"
+											color="white"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Decaf
+											</Text>
+											<Text>
+												Just like regular coffee, excepet the
+												caffein has been removed
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Blended
+											</Text>
+											<Text>
+												Combination of two or three dark roasted
+												beans of organic coffees
+											</Text>
+										</Box>
+									</SimpleGrid>
+								</AccordionPanel>
+							</AccordionItem>
+
+							<AccordionItem border="0" mb="6">
+								<h2>
+									<AccordionButton>
+										<Box flex="1" textAlign="left">
+											<Heading fontSize="xl" opacity=".6">
+												How much would you like ?
+											</Heading>
+										</Box>
+										<AccordionIcon />
+									</AccordionButton>
+								</h2>
+								<AccordionPanel py={4}>
+									<SimpleGrid columns={[2, 3]} gap="5">
+										<Box
+											py="6"
+											px="4"
+											bg="teal.400"
+											borderRadius="md"
+											color="white"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												250g
+											</Text>
+											<Text>
+												Perfect for the solo drinker. Yields about
+												12 delicious cups
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												500g
+											</Text>
+											<Text>
+												Perfect oprtion for a couple, yields about
+												40 delectable cups
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												1000g
+											</Text>
+											<Text>
+												Perfect for offices and avents, yields about
+												90 delightful cups
+											</Text>
+										</Box>
+									</SimpleGrid>
+								</AccordionPanel>
+							</AccordionItem>
+
+							<AccordionItem border="0" mb="6">
+								<h2>
+									<AccordionButton>
+										<Box flex="1" textAlign="left">
+											<Heading fontSize="xl" opacity=".6">
+												Want us to grind them ?
+											</Heading>
+										</Box>
+										<AccordionIcon />
+									</AccordionButton>
+								</h2>
+								<AccordionPanel py={4}>
+									<SimpleGrid columns={[2, 3]} gap="5">
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Wholebean
+											</Text>
+											<Text>
+												Best choice if you cherish the full sensory
+												experience
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Filter
+											</Text>
+											<Text>
+												For drip or pour over coffees methods such
+												as V60 or Aeropress
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="teal.400"
+											borderRadius="md"
+											color="white"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Cafetiere
+											</Text>
+											<Text>
+												Course ground beans specially suited for
+												french press coffee
+											</Text>
+										</Box>
+									</SimpleGrid>
+								</AccordionPanel>
+							</AccordionItem>
+
+							<AccordionItem border="0" mb="6">
+								<h2>
+									<AccordionButton>
+										<Box flex="1" textAlign="left">
+											<Heading fontSize="xl" opacity=".6">
+												How often should we deliver ?
+											</Heading>
+										</Box>
+										<AccordionIcon />
+									</AccordionButton>
+								</h2>
+								<AccordionPanel py={4}>
+									<SimpleGrid columns={[2, 3]} gap="5">
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Every week
+											</Text>
+											<Text>
+												$14.00 per shipment, includes free first
+												class shipping
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="teal.400"
+											borderRadius="md"
+											color="white"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Every 2 weeks
+											</Text>
+											<Text>
+												$17.25 per shipment, includes free priority
+												shipping
+											</Text>
+										</Box>
+										<Box
+											py="6"
+											px="4"
+											bg="gray.100"
+											borderRadius="md"
+										>
+											<Text fontWeight="extrabold" mb="2">
+												Every month
+											</Text>
+											<Text>
+												$22.50 per shipment, include free priority
+												shipping
+											</Text>
+										</Box>
+									</SimpleGrid>
+								</AccordionPanel>
+							</AccordionItem>
+						</Accordion>
+
+						{/* Order summary */}
+						<Box
+							mt="16"
+							py="4"
+							px="8"
+							bg="blackAlpha.800"
+							mx="4"
+							borderRadius="md"
+						>
+							<Text color="whiteAlpha.700" mb="3">
+								Order summary
+							</Text>
+							<Heading
+								fontSize="sm"
+								color="white"
+								mb="2"
+								lineHeight="1.5"
+							>
+								&quot; I drink my coffee as{" "}
+								<Text as="span" color="teal.400">
+									Filter,
+								</Text>{" "}
+								with a{" "}
+								<Text as="span" color="teal.400">
+									Deaf
+								</Text>{" "}
+								type of bean,{" "}
+								<Text as="span" color="teal.400">
+									250g
+								</Text>{" "}
+								ground ala{" "}
+								<Text as="span" color="teal.400">
+									Cafetiere,
+								</Text>{" "}
+								sent to me{" "}
+								<Text as="span" color="teal.400">
+									every Week
+								</Text>{" "}
+								&quot;
+							</Heading>
+						</Box>
+						<Flex w="full" justifyContent="flex-end" pr="4">
+							<Button colorScheme="teal" mt="8">
+								Create my plan!
+							</Button>
+						</Flex>
 					</GridItem>
 				</Grid>
 			</Container>

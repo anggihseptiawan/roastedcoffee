@@ -1,9 +1,11 @@
 import {
 	Box,
 	Container,
+	Flex,
 	Heading,
 	Image,
 	Link,
+	Text,
 	SimpleGrid,
 } from "@chakra-ui/react";
 
@@ -65,6 +67,18 @@ export function Footer() {
 							/>
 						</Box>
 					</SimpleGrid>
+					<Flex mt="2" justifyContent="center">
+						<Text as="small" color="whiteAlpha.700">
+							Designed by{" "}
+							<Link
+								href="https://frontendmentor.io/"
+								color="teal.400"
+								isExternal
+							>
+								Frontend Mentor
+							</Link>{" "}
+						</Text>
+					</Flex>
 				</Box>
 			</Container>
 		</footer>

@@ -24,7 +24,7 @@ export default function Home() {
 
 			<header>
 				<Container maxW="container.lg">
-					<Navbar />
+					<Navbar page="home" />
 					<Box
 						background="url('/assets/images/thumbnail.jpg')"
 						backgroundSize="cover"

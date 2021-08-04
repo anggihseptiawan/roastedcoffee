@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-export function Navbar() {
+export function Navbar({ page }: { page: string }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const btnRef = useRef(null);
 	return (
@@ -27,36 +27,40 @@ export function Navbar() {
 						<Heading size="sm">roastedcoffee</Heading>
 					</NextLink>
 				</Link>
-				<HStack spacing="15px" d={["none", "flex"]}>
-					<Link fontSize="12px" fontWeight="bold" color="gray.500">
-						HOME
-					</Link>
-					<Link
-						href="#why"
-						fontSize="12px"
-						fontWeight="bold"
-						color="gray.500"
-					>
-						ABOUT US
-					</Link>
-					<Link
-						href="#plan"
-						fontSize="12px"
-						fontWeight="bold"
-						color="gray.500"
-					>
-						CREATE YOUR PLAN
-					</Link>
-				</HStack>
-				<Button
-					ref={btnRef}
-					colorScheme="teal"
-					onClick={onOpen}
-					d={["block", "none"]}
-					size="sm"
-				>
-					menu
-				</Button>
+				{page !== "plan" && (
+					<>
+						<HStack spacing="15px" d={["none", "flex"]}>
+							<Link fontSize="12px" fontWeight="bold" color="gray.500">
+								HOME
+							</Link>
+							<Link
+								href="#why"
+								fontSize="12px"
+								fontWeight="bold"
+								color="gray.500"
+							>
+								ABOUT US
+							</Link>
+							<Link
+								href="#plan"
+								fontSize="12px"
+								fontWeight="bold"
+								color="gray.500"
+							>
+								CREATE YOUR PLAN
+							</Link>
+						</HStack>
+						<Button
+							ref={btnRef}
+							colorScheme="teal"
+							onClick={onOpen}
+							d={["block", "none"]}
+							size="sm"
+						>
+							menu
+						</Button>
+					</>
+				)}
 			</Flex>
 
 			<Drawer
@@ -75,10 +79,20 @@ export function Navbar() {
 							<Link fontSize="12px" fontWeight="medium" color="gray.500">
 								HOME
 							</Link>
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+							<Link
+								href="#why"
+								fontSize="12px"
+								fontWeight="medium"
+								color="gray.500"
+							>
 								ABOUT US
 							</Link>
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+							<Link
+								href="#plan"
+								fontSize="12px"
+								fontWeight="medium"
+								color="gray.500"
+							>
 								CREATE YOUR PLAN
 							</Link>
 						</Stack>

@@ -22,13 +22,13 @@ export default function Plan() {
 	return (
 		<>
 			<Container maxW="container.lg">
-				<Navbar />
+				<Navbar page="plan" />
 				<Box
 					position="relative"
 					borderRadius="md"
 					overflow="hidden"
-					py="24"
-					px="16"
+					py={["8", "14"]}
+					px={["6", "10"]}
 					_after={{
 						content: '""',
 						display: "block",
@@ -50,8 +50,8 @@ export default function Plan() {
 							width: "100%",
 						}}
 					>
-						<Box w={["90%", "50%"]} position="relative" zIndex="1">
-							<Heading color="white" mb="4">
+						<Box w={["100%", "50%"]} position="relative" zIndex="1">
+							<Heading color="white" fontSize={["lg", "4xl"]} mb="4">
 								Create a plan
 							</Heading>
 							<Text color="whiteAlpha.700">
@@ -65,7 +65,7 @@ export default function Plan() {
 
 				<Box
 					background="blackAlpha.800"
-					px="14"
+					px={["6", "14"]}
 					pt="4"
 					pb="14"
 					my="20"
@@ -134,7 +134,7 @@ export default function Plan() {
 				</Box>
 
 				<Grid templateColumns="repeat(6, 1fr)" gap="10" my="20">
-					<GridItem colSpan={2}>
+					<GridItem colSpan={[6, 2]} px={[4, 0]}>
 						<Heading
 							pb="3"
 							mb="5"
@@ -181,13 +181,13 @@ export default function Plan() {
 							05 &nbsp;&nbsp; Deliveries
 						</Heading>
 					</GridItem>
-					<GridItem colSpan={4}>
+					<GridItem colSpan={[6, 4]}>
 						<Accordion defaultIndex={[0]} allowMultiple>
 							<AccordionItem border="0" mb="6">
 								<h2>
 									<AccordionButton>
 										<Box flex="1" textAlign="left">
-											<Heading fontSize="xl" opacity=".6">
+											<Heading fontSize={["md", "xl"]} opacity=".6">
 												How do you drink your coffee ?
 											</Heading>
 										</Box>
@@ -247,7 +247,7 @@ export default function Plan() {
 								<h2>
 									<AccordionButton>
 										<Box flex="1" textAlign="left">
-											<Heading fontSize="xl" opacity=".6">
+											<Heading fontSize={["md", "xl"]} opacity=".6">
 												What type of coffee ?
 											</Heading>
 										</Box>
@@ -307,7 +307,7 @@ export default function Plan() {
 								<h2>
 									<AccordionButton>
 										<Box flex="1" textAlign="left">
-											<Heading fontSize="xl" opacity=".6">
+											<Heading fontSize={["md", "xl"]} opacity=".6">
 												How much would you like ?
 											</Heading>
 										</Box>
@@ -367,7 +367,7 @@ export default function Plan() {
 								<h2>
 									<AccordionButton>
 										<Box flex="1" textAlign="left">
-											<Heading fontSize="xl" opacity=".6">
+											<Heading fontSize={["md", "xl"]} opacity=".6">
 												Want us to grind them ?
 											</Heading>
 										</Box>
@@ -427,7 +427,7 @@ export default function Plan() {
 								<h2>
 									<AccordionButton>
 										<Box flex="1" textAlign="left">
-											<Heading fontSize="xl" opacity=".6">
+											<Heading fontSize={["md", "xl"]} opacity=".6">
 												How often should we deliver ?
 											</Heading>
 										</Box>

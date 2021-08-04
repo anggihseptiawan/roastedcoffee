@@ -38,7 +38,7 @@ export function Line({ type }: { type: string }) {
 						content: "''",
 						position: "absolute",
 						display: "block",
-						width: `${type === "plan" ? "110%" : "100%"}`,
+						width: `${type === "plan" ? "111%" : "100%"}`,
 						top: "8px",
 						background: "red.200",
 						height: "3px",
@@ -81,7 +81,7 @@ export function Line({ type }: { type: string }) {
 						background="white"
 						position="relative"
 						zIndex="2"
-						ml="5"
+						ml={`${type === "plan" ? 3 : 5}`}
 					></Box>
 				</Box>
 			</Flex>

@@ -30,7 +30,12 @@ export function Navbar({ page }: { page: string }) {
 				{page !== "plan" && (
 					<>
 						<HStack spacing="15px" d={["none", "flex"]}>
-							<Link fontSize="12px" fontWeight="bold" color="gray.500">
+							<Link
+								href="#home"
+								fontSize="12px"
+								fontWeight="bold"
+								color="gray.500"
+							>
 								HOME
 							</Link>
 							<Link
@@ -76,7 +81,12 @@ export function Navbar({ page }: { page: string }) {
 
 					<DrawerBody>
 						<Stack spacing="5">
-							<Link fontSize="12px" fontWeight="medium" color="gray.500">
+							<Link
+								href="#home"
+								fontSize="12px"
+								fontWeight="medium"
+								color="gray.500"
+							>
 								HOME
 							</Link>
 							<Link

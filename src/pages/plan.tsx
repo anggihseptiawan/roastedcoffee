@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
 	Box,
 	Container,
@@ -18,7 +19,28 @@ import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import { Line } from "../components/Line";
 
+interface InsideOptionTypes {
+	title: string;
+	description: string;
+}
+
+interface OptionsTypes {
+	drink: InsideOptionTypes[];
+	type: InsideOptionTypes[];
+	amount: InsideOptionTypes[];
+	grind: InsideOptionTypes[];
+	often: InsideOptionTypes[];
+}
+
 export default function Plan() {
+	const [options, setOptions] = useState<OptionsTypes>();
+
+	useEffect(() => {
+		fetch("/data/order.json")
+			.then((res) => res.json() as Promise<OptionsTypes>)
+			.then((data) => setOptions(data));
+	}, []);
+
 	return (
 		<>
 			<Container maxW="container.lg">
@@ -196,49 +218,28 @@ export default function Plan() {
 								</h2>
 								<AccordionPanel py={4}>
 									<SimpleGrid columns={[2, 3]} gap="5">
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Capsule
-											</Text>
-											<Text>
-												Compatible with Nespresso system and similar
-												brewers
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="teal.400"
-											borderRadius="md"
-											color="white"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Filter
-											</Text>
-											<Text>
-												For pour over or drip methods like
-												Aeropress, Chemex, and V60
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Espresso
-											</Text>
-											<Text>
-												Dense and finely ground beans for intense,
-												flavorful experience
-											</Text>
-										</Box>
+										{options?.drink.map((option, idx) => {
+											return (
+												<Box
+													key={idx}
+													cursor="pointer"
+													py="6"
+													px="4"
+													bg={`${
+														idx === 0 ? "teal.400" : "gray.100"
+													}`}
+													color={`${
+														idx === 0 ? "white" : "black"
+													}`}
+													borderRadius="md"
+												>
+													<Text fontWeight="extrabold" mb="2">
+														{option?.title}
+													</Text>
+													<Text>{option?.description}</Text>
+												</Box>
+											);
+										})}
 									</SimpleGrid>
 								</AccordionPanel>
 							</AccordionItem>
@@ -256,49 +257,28 @@ export default function Plan() {
 								</h2>
 								<AccordionPanel py={4}>
 									<SimpleGrid columns={[2, 3]} gap="5">
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Single Origin
-											</Text>
-											<Text>
-												Distinct, high quality coffee from a
-												specific family owned farm
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="teal.400"
-											borderRadius="md"
-											color="white"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Decaf
-											</Text>
-											<Text>
-												Just like regular coffee, excepet the
-												caffein has been removed
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Blended
-											</Text>
-											<Text>
-												Combination of two or three dark roasted
-												beans of organic coffees
-											</Text>
-										</Box>
+										{options?.type.map((option, idx) => {
+											return (
+												<Box
+													key={idx}
+													cursor="pointer"
+													py="6"
+													px="4"
+													bg={`${
+														idx === 1 ? "teal.400" : "gray.100"
+													}`}
+													color={`${
+														idx === 1 ? "white" : "black"
+													}`}
+													borderRadius="md"
+												>
+													<Text fontWeight="extrabold" mb="2">
+														{option.title}
+													</Text>
+													<Text>{option.description}</Text>
+												</Box>
+											);
+										})}
 									</SimpleGrid>
 								</AccordionPanel>
 							</AccordionItem>
@@ -316,49 +296,28 @@ export default function Plan() {
 								</h2>
 								<AccordionPanel py={4}>
 									<SimpleGrid columns={[2, 3]} gap="5">
-										<Box
-											py="6"
-											px="4"
-											bg="teal.400"
-											borderRadius="md"
-											color="white"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												250g
-											</Text>
-											<Text>
-												Perfect for the solo drinker. Yields about
-												12 delicious cups
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												500g
-											</Text>
-											<Text>
-												Perfect oprtion for a couple, yields about
-												40 delectable cups
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												1000g
-											</Text>
-											<Text>
-												Perfect for offices and avents, yields about
-												90 delightful cups
-											</Text>
-										</Box>
+										{options?.amount.map((option, idx) => {
+											return (
+												<Box
+													key={idx}
+													cursor="pointer"
+													py="6"
+													px="4"
+													bg={`${
+														idx === 2 ? "teal.400" : "gray.100"
+													}`}
+													color={`${
+														idx === 2 ? "white" : "black"
+													}`}
+													borderRadius="md"
+												>
+													<Text fontWeight="extrabold" mb="2">
+														{option.title}
+													</Text>
+													<Text>{option.description}</Text>
+												</Box>
+											);
+										})}
 									</SimpleGrid>
 								</AccordionPanel>
 							</AccordionItem>
@@ -376,49 +335,28 @@ export default function Plan() {
 								</h2>
 								<AccordionPanel py={4}>
 									<SimpleGrid columns={[2, 3]} gap="5">
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Wholebean
-											</Text>
-											<Text>
-												Best choice if you cherish the full sensory
-												experience
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Filter
-											</Text>
-											<Text>
-												For drip or pour over coffees methods such
-												as V60 or Aeropress
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="teal.400"
-											borderRadius="md"
-											color="white"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Cafetiere
-											</Text>
-											<Text>
-												Course ground beans specially suited for
-												french press coffee
-											</Text>
-										</Box>
+										{options?.grind.map((option, idx) => {
+											return (
+												<Box
+													key={idx}
+													cursor="pointer"
+													py="6"
+													px="4"
+													bg={`${
+														idx === 1 ? "teal.400" : "gray.100"
+													}`}
+													color={`${
+														idx === 1 ? "white" : "black"
+													}`}
+													borderRadius="md"
+												>
+													<Text fontWeight="extrabold" mb="2">
+														{option.title}
+													</Text>
+													<Text>{option.description}</Text>
+												</Box>
+											);
+										})}
 									</SimpleGrid>
 								</AccordionPanel>
 							</AccordionItem>
@@ -436,49 +374,24 @@ export default function Plan() {
 								</h2>
 								<AccordionPanel py={4}>
 									<SimpleGrid columns={[2, 3]} gap="5">
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Every week
-											</Text>
-											<Text>
-												$14.00 per shipment, includes free first
-												class shipping
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="teal.400"
-											borderRadius="md"
-											color="white"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Every 2 weeks
-											</Text>
-											<Text>
-												$17.25 per shipment, includes free priority
-												shipping
-											</Text>
-										</Box>
-										<Box
-											py="6"
-											px="4"
-											bg="gray.100"
-											borderRadius="md"
-										>
-											<Text fontWeight="extrabold" mb="2">
-												Every month
-											</Text>
-											<Text>
-												$22.50 per shipment, include free priority
-												shipping
-											</Text>
-										</Box>
+										{options?.often.map((option, idx) => (
+											<Box
+												key={idx}
+												cursor="pointer"
+												py="6"
+												px="4"
+												bg={`${
+													idx === 1 ? "teal.400" : "gray.100"
+												}`}
+												color={`${idx === 1 ? "white" : "black"}`}
+												borderRadius="md"
+											>
+												<Text fontWeight="extrabold" mb="2">
+													{option.title}
+												</Text>
+												<Text>{option.description}</Text>
+											</Box>
+										))}
 									</SimpleGrid>
 								</AccordionPanel>
 							</AccordionItem>

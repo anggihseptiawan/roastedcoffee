@@ -26,6 +26,7 @@ export default function Home() {
 				<Container maxW="container.lg">
 					<Navbar page="home" />
 					<Box
+						id="home"
 						background="url('/assets/images/thumbnail.jpg')"
 						backgroundSize="cover"
 						py={[10, 20]}

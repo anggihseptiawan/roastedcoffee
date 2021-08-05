@@ -1,0 +1,72 @@
+{
+	"drink": [
+		{
+			"title": "Capsule",
+			"description": "Compatible with Nespresso system and similar brewers"
+		},
+		{
+			"title": "Filter",
+			"description": "For pour over or drip methods like Aeropress, Chemex, and V60"
+		},
+		{
+			"title": "Espresso",
+			"description": "Dense and finely ground beans for intense, flavorful experience"
+		}
+	],
+	"type": [
+		{
+			"title": "Single Origin",
+			"description": "Distinct, high quality coffee from a specific family owned farm"
+		},
+		{
+			"title": "Decaf",
+			"description": "Just like regular coffee, excepet the caffein has been removed"
+		},
+		{
+			"title": "Blended",
+			"description": "Combination of two or three dark roasted beans of organic coffees"
+		}
+	],
+	"amount": [
+		{
+			"title": "250g",
+			"description": "Perfect for the solo drinker. Yields about 12 delicious cups"
+		},
+		{
+			"title": "500g",
+			"description": "Perfect oprtion for a couple, yields about 40 delectable cups"
+		},
+		{
+			"title": "1000g",
+			"description": "Perfect for offices and avents, yields about 90 delightful cups"
+		}
+	],
+	"grind": [
+		{
+			"title": "Wholebean",
+			"description": "Best choice if you cherish the full sensory experience"
+		},
+		{
+			"title": "Filter",
+			"description": "For drip or pour over coffees methods such as V60 or Aeropress"
+		},
+		{
+			"title": "Cafetiere",
+			"description": "Course ground beans specially suited for french press coffee"
+		}
+	],
+	"often": [
+		{
+			"title": "Every week",
+			"description": "$14.00 per shipment, includes free first class shipping"
+		},
+		{
+			"title": "Every 2 weeks",
+			"description": "$17.25 per shipment, includes free priority shipping"
+		},
+		{
+			"title": "Every month",
+			"description": "$22.50 per shipment, include free priority shipping"
+		}
+	]
+}

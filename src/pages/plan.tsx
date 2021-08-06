@@ -156,6 +156,7 @@ export default function Plan() {
 				</Box>
 
 				<Grid templateColumns="repeat(6, 1fr)" gap="10" my="20">
+					{/* Option list menu */}
 					<GridItem colSpan={[6, 2]} px={[4, 0]}>
 						<Heading
 							pb="3"

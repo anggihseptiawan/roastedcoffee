@@ -203,6 +203,8 @@ export default function Plan() {
 							05 &nbsp;&nbsp; Deliveries
 						</Heading>
 					</GridItem>
+
+					{/* Order options */}
 					<GridItem colSpan={[6, 4]}>
 						<Accordion defaultIndex={[0]} allowMultiple>
 							<AccordionItem border="0" mb="6">

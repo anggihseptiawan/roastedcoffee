@@ -295,28 +295,24 @@ export default function Plan() {
 								</h2>
 								<AccordionPanel py={4}>
 									<SimpleGrid columns={[2, 3]} gap="5">
-										{options?.amount.map((option, idx) => {
-											return (
-												<Box
-													key={idx}
-													cursor="pointer"
-													py="6"
-													px="4"
-													bg={`${
-														idx === 2 ? "teal.400" : "gray.100"
-													}`}
-													color={`${
-														idx === 2 ? "white" : "black"
-													}`}
-													borderRadius="md"
-												>
-													<Text fontWeight="extrabold" mb="2">
-														{option.title}
-													</Text>
-													<Text>{option.description}</Text>
-												</Box>
-											);
-										})}
+										{options?.amount.map((option, idx) => (
+											<Box
+												key={idx}
+												cursor="pointer"
+												py="6"
+												px="4"
+												bg={`${
+													idx === 2 ? "teal.400" : "gray.100"
+												}`}
+												color={`${idx === 2 ? "white" : "black"}`}
+												borderRadius="md"
+											>
+												<Text fontWeight="extrabold" mb="2">
+													{option.title}
+												</Text>
+												<Text>{option.description}</Text>
+											</Box>
+										))}
 									</SimpleGrid>
 								</AccordionPanel>
 							</AccordionItem>

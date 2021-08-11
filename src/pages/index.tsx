@@ -359,6 +359,7 @@ export default function Home() {
 				</Container>
 			</main>
 
+			{/* Footer section */}
 			<Footer />
 		</>
 	);

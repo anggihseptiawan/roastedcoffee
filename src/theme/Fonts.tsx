@@ -1,8 +1,8 @@
 import { Global } from "@emotion/react";
 
 const Fonts = () => (
-	<Global
-		styles={`
+  <Global
+    styles={`
       /* Heading */
       @font-face {
         font-family: 'Rammetto One';
@@ -11,7 +11,7 @@ const Fonts = () => (
         src: url('../../assets/fonts/one/RammettoOne-Regular.ttf');
       }
       `}
-	/>
+  />
 );
 
 export default Fonts;

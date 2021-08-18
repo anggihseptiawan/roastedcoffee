@@ -5,11 +5,11 @@ import Fonts from "../theme/Fonts";
 import "@fontsource/dm-sans";
 
 function MyApp({ Component, pageProps }: AppProps) {
-	return (
-		<ChakraProvider theme={theme}>
-			<Fonts />
-			<Component {...pageProps} />
-		</ChakraProvider>
-	);
+  return (
+    <ChakraProvider theme={theme}>
+      <Fonts />
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 }
 export default MyApp;

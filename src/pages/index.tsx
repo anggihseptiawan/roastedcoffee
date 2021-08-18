@@ -74,6 +74,7 @@ export default function Home() {
 				</Container>
 			</header>
 
+			{/* Main section */}
 			<main>
 				<Container maxW="container.lg" py={["10", "20"]}>
 					{/* Collection Section */}

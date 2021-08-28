@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 import {
   Button,
   Flex,
@@ -13,23 +13,27 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
+} from '@chakra-ui/react';
+import NextLink from 'next/link';
 
-export function Navbar({ page }: { page: string }) {
+type PageProps = {
+  page: string;
+};
+
+export function Navbar({ page }: PageProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef(null);
   return (
     <>
       <Flex justifyContent="space-between" py="7">
-        <Link>
+        <Link href="/">
           <NextLink href="/">
             <Heading size="sm">roastedcoffee</Heading>
           </NextLink>
         </Link>
-        {page !== "plan" && (
+        {page !== 'plan' && (
           <>
-            <HStack spacing="15px" d={["none", "flex"]}>
+            <HStack spacing="15px" d={['none', 'flex']}>
               <Link href="#home" fontSize="12px" fontWeight="bold" color="gray.500">
                 HOME
               </Link>
@@ -40,7 +44,7 @@ export function Navbar({ page }: { page: string }) {
                 CREATE YOUR PLAN
               </Link>
             </HStack>
-            <Button ref={btnRef} colorScheme="teal" onClick={onOpen} d={["block", "none"]} size="sm">
+            <Button ref={btnRef} colorScheme="teal" onClick={onOpen} d={['block', 'none']} size="sm">
               menu
             </Button>
           </>

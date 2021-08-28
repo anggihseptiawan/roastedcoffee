@@ -1,9 +1,9 @@
-import { Box, Button, Container, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import Head from "next/head";
-import Link from "next/link";
-import { Footer } from "../components/Footer";
-import { Line } from "../components/Line";
-import { Navbar } from "../components/Navbar";
+import { Box, Button, Container, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import Head from 'next/head';
+import Link from 'next/link';
+import { Footer } from '../components/Footer';
+import { Line } from '../components/Line';
+import { Navbar } from '../components/Navbar';
 
 export default function Home() {
   return (
@@ -28,12 +28,12 @@ export default function Home() {
             position="relative"
             _after={{
               content: '""',
-              position: "absolute",
+              position: 'absolute',
               inset: 0,
-              background: "linear-gradient(to right, #000000d4, #00000040)",
+              background: 'linear-gradient(to right, #000000d4, #00000040)',
             }}
           >
-            <Box maxW={{ sm: "100%", md: "50%" }} position="relative" zIndex="2">
+            <Box maxW={{ sm: '100%', md: '50%' }} position="relative" zIndex="2">
               <Heading as="h3" mb="4" color="white">
                 Great coffee made simple
               </Heading>
@@ -46,8 +46,8 @@ export default function Home() {
                   as="a"
                   background="teal.500"
                   color="white"
-                  _hover={{ bg: "teal.600" }}
-                  _active={{ bg: "teal.600" }}
+                  _hover={{ bg: 'teal.600' }}
+                  _active={{ bg: 'teal.600' }}
                   mt="8"
                   px="6"
                 >
@@ -61,14 +61,14 @@ export default function Home() {
 
       {/* Main section */}
       <main>
-        <Container maxW="container.lg" py={["10", "20"]}>
+        <Container maxW="container.lg" py={['10', '20']}>
           {/* Collection Section */}
           <Heading
-            fontSize={["4xl", "7xl"]}
+            fontSize={['4xl', '7xl']}
             align="center"
             position="relative"
             opacity=".05"
-            bottom={["-14px", "-20px"]}
+            bottom={['-14px', '-20px']}
             zIndex="-1"
           >
             our collection
@@ -114,15 +114,15 @@ export default function Home() {
           {/* Section Collection */}
           <Box
             id="why"
-            mt={["20", "40"]}
-            pt={["10", "20"]}
-            pb={["28", "36"]}
+            mt={['20', '40']}
+            pt={['10', '20']}
+            pb={['28', '36']}
             d="flex"
             justifyContent="center"
             background="blackAlpha.800"
             borderRadius="md"
           >
-            <Box w={["90%", "50%"]}>
+            <Box w={['90%', '50%']}>
               <Heading align="center" color="white" mb="4">
                 Why choose us ?
               </Heading>
@@ -187,7 +187,7 @@ export default function Home() {
           </SimpleGrid>
 
           {/* Section how it works */}
-          <Box id="plan" mt={["20", "40"]} mb="20" style={{ scrollPaddingTop: "10px" }}>
+          <Box id="plan" mt={['20', '40']} mb="20" style={{ scrollPaddingTop: '10px' }}>
             <Heading as="h5" fontSize="md" opacity="0.6">
               How it works
             </Heading>
@@ -197,10 +197,10 @@ export default function Home() {
             <Box>
               <SimpleGrid columns={[1, 2, 3]} spacing="10">
                 <Box>
-                  <Heading fontSize="4xl" mb={["2", "10"]} color="red.200">
+                  <Heading fontSize="4xl" mb={['2', '10']} color="red.200">
                     01
                   </Heading>
-                  <Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
+                  <Heading mb={['2', '5']} fontSize="lg" opacity="0.8">
                     Pick your coffee
                   </Heading>
                   <Text>
@@ -209,10 +209,10 @@ export default function Home() {
                   </Text>
                 </Box>
                 <Box>
-                  <Heading fontSize="4xl" mb={["2", "10"]} color="red.200">
+                  <Heading fontSize="4xl" mb={['2', '10']} color="red.200">
                     02
                   </Heading>
-                  <Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
+                  <Heading mb={['2', '5']} fontSize="lg" opacity="0.8">
                     Choose the frequency
                   </Heading>
                   <Text>
@@ -221,10 +221,10 @@ export default function Home() {
                   </Text>
                 </Box>
                 <Box>
-                  <Heading fontSize="4xl" mb={["2", "10"]} color="red.200">
+                  <Heading fontSize="4xl" mb={['2', '10']} color="red.200">
                     03
                   </Heading>
-                  <Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
+                  <Heading mb={['2', '5']} fontSize="lg" opacity="0.8">
                     Receive and enjoy!
                   </Heading>
                   <Text>
@@ -238,9 +238,9 @@ export default function Home() {
                   as="a"
                   background="teal.500"
                   color="white"
-                  _hover={{ bg: "teal.600" }}
-                  _active={{ bg: "teal.600" }}
-                  mt={["8", "12"]}
+                  _hover={{ bg: 'teal.600' }}
+                  _active={{ bg: 'teal.600' }}
+                  mt={['8', '12']}
                   px="6"
                 >
                   Create your plan

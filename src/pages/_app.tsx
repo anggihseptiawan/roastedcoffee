@@ -1,8 +1,8 @@
-import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "../theme";
-import Fonts from "../theme/Fonts";
-import "@fontsource/dm-sans";
+import type { AppProps } from 'next/app';
+import { ChakraProvider } from '@chakra-ui/react';
+import theme from '../theme';
+import Fonts from '../theme/Fonts';
+import '@fontsource/dm-sans';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

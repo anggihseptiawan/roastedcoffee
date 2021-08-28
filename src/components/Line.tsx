@@ -1,22 +1,26 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex } from '@chakra-ui/react';
 
-export function Line({ type }: { type: string }) {
+type TypeProps = {
+  type: string;
+};
+
+export function Line({ type }: TypeProps) {
   return (
     <Box w="full">
       <Flex>
         <Box
-          my={["8", "14"]}
+          my={['8', '14']}
           position="relative"
           w="full"
           _after={{
             content: "''",
-            position: "absolute",
-            display: "block",
-            width: "100%",
-            top: "8px",
-            background: "red.200",
-            height: "3px",
-            zIndex: `${type === "plan" ? 1 : -1}`,
+            position: 'absolute',
+            display: 'block',
+            width: '100%',
+            top: '8px',
+            background: 'red.200',
+            height: '3px',
+            zIndex: `${type === 'plan' ? 1 : -1}`,
           }}
         >
           <Box
@@ -28,21 +32,21 @@ export function Line({ type }: { type: string }) {
             background="white"
             position="relative"
             zIndex="2"
-          ></Box>
+          />
         </Box>
         <Box
-          my={["8", "14"]}
+          my={['8', '14']}
           position="relative"
           w="full"
           _after={{
             content: "''",
-            position: "absolute",
-            display: "block",
-            width: `${type === "plan" ? "111%" : "100%"}`,
-            top: "8px",
-            background: "red.200",
-            height: "3px",
-            zIndex: `${type === "plan" ? 1 : -1}`,
+            position: 'absolute',
+            display: 'block',
+            width: `${type === 'plan' ? '111%' : '100%'}`,
+            top: '8px',
+            background: 'red.200',
+            height: '3px',
+            zIndex: `${type === 'plan' ? 1 : -1}`,
           }}
         >
           <Box
@@ -55,21 +59,21 @@ export function Line({ type }: { type: string }) {
             position="relative"
             zIndex="2"
             ml="3"
-          ></Box>
+          />
         </Box>
         <Box
-          my={["8", "14"]}
+          my={['8', '14']}
           position="relative"
           w="full"
           _after={{
             content: "''",
-            position: "absolute",
-            display: "block",
-            width: "100%",
-            top: "8px",
-            background: `${type === "plan" ? "" : "red.200"}`,
-            height: "3px",
-            zIndex: `${type === "plan" ? 1 : -1}`,
+            position: 'absolute',
+            display: 'block',
+            width: '100%',
+            top: '8px',
+            background: `${type === 'plan' ? '' : 'red.200'}`,
+            height: '3px',
+            zIndex: `${type === 'plan' ? 1 : -1}`,
           }}
         >
           <Box
@@ -81,8 +85,8 @@ export function Line({ type }: { type: string }) {
             background="white"
             position="relative"
             zIndex="2"
-            ml={`${type === "plan" ? 3 : 5}`}
-          ></Box>
+            ml={`${type === 'plan' ? 3 : 5}`}
+          />
         </Box>
       </Flex>
     </Box>

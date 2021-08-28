@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import {
   Box,
   Container,
@@ -14,29 +14,29 @@ import {
   AccordionItem,
   Button,
   Flex,
-} from "@chakra-ui/react";
-import { Footer } from "../components/Footer";
-import { Navbar } from "../components/Navbar";
-import { Line } from "../components/Line";
+} from '@chakra-ui/react';
+import { Footer } from '../components/Footer';
+import { Navbar } from '../components/Navbar';
+import { Line } from '../components/Line';
 
-interface InsideOptionTypes {
+type InsideOptionTypes = {
   title: string;
   description: string;
-}
+};
 
-interface OptionsTypes {
+type OptionsTypes = {
   drink: InsideOptionTypes[];
   type: InsideOptionTypes[];
   amount: InsideOptionTypes[];
   grind: InsideOptionTypes[];
   often: InsideOptionTypes[];
-}
+};
 
 export default function Plan() {
   const [options, setOptions] = useState<OptionsTypes>();
 
   useEffect(() => {
-    fetch("/data/order.json")
+    fetch('./data/order.json')
       .then((res) => res.json() as Promise<OptionsTypes>)
       .then((data) => setOptions(data));
   }, []);
@@ -49,31 +49,31 @@ export default function Plan() {
           position="relative"
           borderRadius="md"
           overflow="hidden"
-          py={["8", "14"]}
-          px={["6", "10"]}
+          py={['8', '14']}
+          px={['6', '10']}
           _after={{
             content: '""',
-            display: "block",
-            position: "absolute",
+            display: 'block',
+            position: 'absolute',
             inset: 0,
-            width: "100%",
-            background: "linear-gradient(to right, #000, rgba(0,0,0,0))",
+            width: '100%',
+            background: 'linear-gradient(to right, #000, rgba(0,0,0,0))',
           }}
         >
           <Box
             _after={{
               content: '""',
-              position: "absolute",
+              position: 'absolute',
               inset: 0,
               zIndex: -1,
               background: "url('/assets/images/coffee-thumbnail.jpg')",
-              backgroundSize: "cover",
-              display: "block",
-              width: "100%",
+              backgroundSize: 'cover',
+              display: 'block',
+              width: '100%',
             }}
           >
-            <Box w={["100%", "50%"]} position="relative" zIndex="1">
-              <Heading color="white" fontSize={["lg", "4xl"]} mb="4">
+            <Box w={['100%', '50%']} position="relative" zIndex="1">
+              <Heading color="white" fontSize={['lg', '4xl']} mb="4">
                 Create a plan
               </Heading>
               <Text color="whiteAlpha.700">
@@ -84,16 +84,16 @@ export default function Plan() {
           </Box>
         </Box>
 
-        <Box background="blackAlpha.800" px={["6", "14"]} pt="4" pb="14" my="20" borderRadius="md" color="white">
+        <Box background="blackAlpha.800" px={['6', '14']} pt="4" pb="14" my="20" borderRadius="md" color="white">
           <Line type="plan" />
 
           <Box>
             <SimpleGrid columns={[1, 2, 3]} spacing="10">
               <Box>
-                <Heading fontSize="4xl" mb={["2", "10"]} color="red.200">
+                <Heading fontSize="4xl" mb={['2', '10']} color="red.200">
                   01
                 </Heading>
-                <Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
+                <Heading mb={['2', '5']} fontSize="lg" opacity="0.8">
                   Pick your coffee
                 </Heading>
                 <Text>
@@ -102,10 +102,10 @@ export default function Plan() {
                 </Text>
               </Box>
               <Box>
-                <Heading fontSize="4xl" mb={["2", "10"]} color="red.200">
+                <Heading fontSize="4xl" mb={['2', '10']} color="red.200">
                   02
                 </Heading>
-                <Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
+                <Heading mb={['2', '5']} fontSize="lg" opacity="0.8">
                   Choose the frequency
                 </Heading>
                 <Text>
@@ -114,10 +114,10 @@ export default function Plan() {
                 </Text>
               </Box>
               <Box>
-                <Heading fontSize="4xl" mb={["2", "10"]} color="red.200">
+                <Heading fontSize="4xl" mb={['2', '10']} color="red.200">
                   03
                 </Heading>
-                <Heading mb={["2", "5"]} fontSize="lg" opacity="0.8">
+                <Heading mb={['2', '5']} fontSize="lg" opacity="0.8">
                   Receive and enjoy!
                 </Heading>
                 <Text>
@@ -156,7 +156,7 @@ export default function Plan() {
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
-                      <Heading fontSize={["md", "xl"]} opacity=".6">
+                      <Heading fontSize={['md', 'xl']} opacity=".6">
                         How do you drink your coffee ?
                       </Heading>
                     </Box>
@@ -165,24 +165,22 @@ export default function Plan() {
                 </h2>
                 <AccordionPanel py={4}>
                   <SimpleGrid columns={[2, 3]} gap="5">
-                    {options?.drink.map((option, idx) => {
-                      return (
-                        <Box
-                          key={idx}
-                          cursor="pointer"
-                          py="6"
-                          px="4"
-                          bg={`${idx === 0 ? "teal.400" : "gray.100"}`}
-                          color={`${idx === 0 ? "white" : "black"}`}
-                          borderRadius="md"
-                        >
-                          <Text fontWeight="extrabold" mb="2">
-                            {option?.title}
-                          </Text>
-                          <Text>{option?.description}</Text>
-                        </Box>
-                      );
-                    })}
+                    {options?.drink.map((option, idx) => (
+                      <Box
+                        key={idx}
+                        cursor="pointer"
+                        py="6"
+                        px="4"
+                        bg={`${idx === 0 ? 'teal.400' : 'gray.100'}`}
+                        color={`${idx === 0 ? 'white' : 'black'}`}
+                        borderRadius="md"
+                      >
+                        <Text fontWeight="extrabold" mb="2">
+                          {option.title}
+                        </Text>
+                        <Text>{option.description}</Text>
+                      </Box>
+                    ))}
                   </SimpleGrid>
                 </AccordionPanel>
               </AccordionItem>
@@ -191,7 +189,7 @@ export default function Plan() {
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
-                      <Heading fontSize={["md", "xl"]} opacity=".6">
+                      <Heading fontSize={['md', 'xl']} opacity=".6">
                         What type of coffee ?
                       </Heading>
                     </Box>
@@ -206,8 +204,8 @@ export default function Plan() {
                         cursor="pointer"
                         py="6"
                         px="4"
-                        bg={`${idx === 1 ? "teal.400" : "gray.100"}`}
-                        color={`${idx === 1 ? "white" : "black"}`}
+                        bg={`${idx === 1 ? 'teal.400' : 'gray.100'}`}
+                        color={`${idx === 1 ? 'white' : 'black'}`}
                         borderRadius="md"
                       >
                         <Text fontWeight="extrabold" mb="2">
@@ -224,7 +222,7 @@ export default function Plan() {
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
-                      <Heading fontSize={["md", "xl"]} opacity=".6">
+                      <Heading fontSize={['md', 'xl']} opacity=".6">
                         How much would you like ?
                       </Heading>
                     </Box>
@@ -239,8 +237,8 @@ export default function Plan() {
                         cursor="pointer"
                         py="6"
                         px="4"
-                        bg={`${idx === 2 ? "teal.400" : "gray.100"}`}
-                        color={`${idx === 2 ? "white" : "black"}`}
+                        bg={`${idx === 2 ? 'teal.400' : 'gray.100'}`}
+                        color={`${idx === 2 ? 'white' : 'black'}`}
                         borderRadius="md"
                       >
                         <Text fontWeight="extrabold" mb="2">
@@ -257,7 +255,7 @@ export default function Plan() {
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
-                      <Heading fontSize={["md", "xl"]} opacity=".6">
+                      <Heading fontSize={['md', 'xl']} opacity=".6">
                         Want us to grind them ?
                       </Heading>
                     </Box>
@@ -266,24 +264,22 @@ export default function Plan() {
                 </h2>
                 <AccordionPanel py={4}>
                   <SimpleGrid columns={[2, 3]} gap="5">
-                    {options?.grind.map((option, idx) => {
-                      return (
-                        <Box
-                          key={idx}
-                          cursor="pointer"
-                          py="6"
-                          px="4"
-                          bg={`${idx === 1 ? "teal.400" : "gray.100"}`}
-                          color={`${idx === 1 ? "white" : "black"}`}
-                          borderRadius="md"
-                        >
-                          <Text fontWeight="extrabold" mb="2">
-                            {option.title}
-                          </Text>
-                          <Text>{option.description}</Text>
-                        </Box>
-                      );
-                    })}
+                    {options?.grind.map((option, idx) => (
+                      <Box
+                        key={idx}
+                        cursor="pointer"
+                        py="6"
+                        px="4"
+                        bg={`${idx === 1 ? 'teal.400' : 'gray.100'}`}
+                        color={`${idx === 1 ? 'white' : 'black'}`}
+                        borderRadius="md"
+                      >
+                        <Text fontWeight="extrabold" mb="2">
+                          {option.title}
+                        </Text>
+                        <Text>{option.description}</Text>
+                      </Box>
+                    ))}
                   </SimpleGrid>
                 </AccordionPanel>
               </AccordionItem>
@@ -292,7 +288,7 @@ export default function Plan() {
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
-                      <Heading fontSize={["md", "xl"]} opacity=".6">
+                      <Heading fontSize={['md', 'xl']} opacity=".6">
                         How often should we deliver ?
                       </Heading>
                     </Box>
@@ -307,8 +303,8 @@ export default function Plan() {
                         cursor="pointer"
                         py="6"
                         px="4"
-                        bg={`${idx === 1 ? "teal.400" : "gray.100"}`}
-                        color={`${idx === 1 ? "white" : "black"}`}
+                        bg={`${idx === 1 ? 'teal.400' : 'gray.100'}`}
+                        color={`${idx === 1 ? 'white' : 'black'}`}
                         borderRadius="md"
                       >
                         <Text fontWeight="extrabold" mb="2">
@@ -328,26 +324,26 @@ export default function Plan() {
                 Order summary
               </Text>
               <Heading fontSize="sm" color="white" mb="2" lineHeight="1.5">
-                &quot; I drink my coffee as{" "}
+                &quot; I drink my coffee as{' '}
                 <Text as="span" color="teal.400">
                   Filter,
-                </Text>{" "}
-                with a{" "}
+                </Text>{' '}
+                with a{' '}
                 <Text as="span" color="teal.400">
                   Deaf
-                </Text>{" "}
-                type of bean,{" "}
+                </Text>{' '}
+                type of bean,{' '}
                 <Text as="span" color="teal.400">
                   250g
-                </Text>{" "}
-                ground ala{" "}
+                </Text>{' '}
+                ground ala{' '}
                 <Text as="span" color="teal.400">
                   Cafetiere,
-                </Text>{" "}
-                sent to me{" "}
+                </Text>{' '}
+                sent to me{' '}
                 <Text as="span" color="teal.400">
                   every Week
-                </Text>{" "}
+                </Text>{' '}
                 &quot;
               </Heading>
             </Box>
